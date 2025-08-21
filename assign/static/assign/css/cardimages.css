@@ -1,0 +1,17 @@
+
+  .card-img-top {
+    height: 220px;             /* 👈 Fixed height for all images */
+    object-fit: cover;         /* 👈 Ensures image fills the area */
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+
+  .card {
+    height: 100%;              /* 👈 Ensures equal height */
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

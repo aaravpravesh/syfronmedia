@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Data Science{% endblock %}
+
+{% block content %}
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+         style="height:70vh; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('{% static "images/data-science-bg.jpg" %}') no-repeat center center/cover;">
+  <div data-aos="fade-down">
+    <h1 class="display-4 fw-bold">Data Science</h1>
+    <p class="lead">Transform data into insights and drive smarter business decisions.</p>
+    <a href="#ds-services" class="btn btn-info btn-lg mt-3">Explore Data Services</a>
+  </div>
+</section>
+
+<section id="ds-services" class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-md-4" data-aos="flip-left">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Data Analytics</h5>
+        <p>Turn raw data into actionable insights with advanced analytics.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Machine Learning</h5>
+        <p>Automate predictions & recommendations using ML algorithms.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Business Forecasting</h5>
+        <p>Forecast trends & make proactive business decisions with data models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

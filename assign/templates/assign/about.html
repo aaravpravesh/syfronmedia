@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - Syfron Media{% endblock %}
+{% block utility_bar %}
+{% include "utility_bar.html" %}
+{% endblock utility_bar %}
+
+{% block Slider %}
+  {% include "slider.html" %}
+{% endblock Slider %}
+
+{% block content %}
+
+<!-- About Us Section -->
+<section class="container my-5 py-5">
+  <div class="row align-items-center">
+    <!-- Text Side -->
+    <div class="col-md-6" data-aos="fade-right">
+      <h2 class="fw-bold mb-4 text-primary">About Us</h2>
+      <p class="lead">
+        Welcome to <strong>Syfron Media</strong> training platform!  
+        We are dedicated to providing high-quality courses and learning materials 
+        that help you upskill and achieve your goals.
+      </p>
+      <p>
+        Our mission is to make learning simple, effective, and accessible for everyone.  
+        With expert trainers, practical examples, and hands-on projects, you’ll gain skills that truly matter.
+      </p>
+      <a href="{% url 'application' %}" class="btn btn-outline-primary btn-lg mt-3 shadow-sm" data-aos="zoom-in">Learn More</a>
+    </div>
+
+    <!-- Image Side -->
+    <div class="col-md-6 text-center" data-aos="fade-left">
+      <img src="{% static 'images/about_img.avif' %}" alt="About Us"
+           class="img-fluid rounded-4 shadow-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="container my-5 py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-primary" data-aos="fade-up">Where Do We Deal In</h2>
+    <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+      At Syfron Media, we specialize in a wide range of digital solutions 
+      to help businesses thrive in the online world.
+    </p>
+  </div>
+
+  <div class="row g-4">
+    
+    <!-- Website Designing & Development -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static "images/web_design.avif" %}"
+             class="card-img-top" alt="Website Designing">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Website Designing & Development</h5>
+          <p class="card-text">
+            Build modern, responsive, and dynamic websites that engage and convert visitors.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-Commerce Solutions -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static "images/ecommerce.avif" %}"
+             class="card-img-top" alt="E-Commerce">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">E-Commerce Solutions</h5>
+          <p class="card-text">
+            Launch powerful e-commerce platforms to boost online sales and manage products seamlessly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Marketing & SEO -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static "images/digital_marketing.avif" %}"
+             class="card-img-top" alt="Digital Marketing">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Digital Marketing & SEO</h5>
+          <p class="card-text">
+            Enhance your brand presence and rank higher on search engines with our SEO & marketing services.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pay-Per-Click Campaigns -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static "images/about_img.avif" %}"
+             class="card-img-top" alt="PPC Campaigns">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Pay-Per-Click (PPC) Campaigns</h5>
+          <p class="card-text">
+            Run targeted ad campaigns that deliver measurable ROI and attract qualified leads.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Science -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static 'images/data_science.jpg' %}"
+             class="card-img-top" alt="Data Science">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Data Science</h5>
+          <p class="card-text">
+            Unlock insights from your data with AI, ML, and predictive analytics solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Intelligence -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+      <div class="card shadow-lg border-0 h-100">
+        <img src="{% static 'images/business_intelligence.jpg' %}"
+             class="card-img-top" alt="Business Intelligence">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Business Intelligence</h5>
+          <p class="card-text">
+            Build interactive dashboards and reports to make smarter business decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

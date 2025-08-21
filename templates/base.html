@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Training Project{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'assign/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assign/css/cardimages.css' %}">
+    <link rel="stylesheet" href="{% static 'assign/css/backtotop.css' %}">
+    <style>
+        .error-message {
+        color: red;
+        font-size: 0.875rem;
+        display: none;
+        }
+    </style>
+</head> 
+<body>
+
+    {% block utility_bar %}
+
+    {% endblock utility_bar %}
+
+    {% block navbar %}
+    {% include "navbar.html" %}
+    {% endblock navbar %}
+
+    <!-- Slider Section -->
+    {% block Slider %}  
+    {% endblock Slider %}
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p><strong>About Us – Syfron Media</strong> <br />
+
+                        Founded in November 2009 and headquartered in Chandigarh, India, Syfron Media is a dynamic software solutions company dedicated to empowering businesses through technology and innovation.</p>
+                </div>
+                <div class="col-md-1 mb-3">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">Services</a></li>
+                        <li><a href="#" class="text-light">Business Intelligence Dashboards</a></li>
+                        <li><a href="#" class="text-light">Data Science Dashboards</a></li>
+                        <li><a href="#" class="text-light">Pay-Per-Click (PPC) Campaigns</a></li>
+                        <li><a href="#" class="text-light">Digital Marketing & SEO</a></li>
+                        <li><a href="#" class="text-light">E-Commerce Solutions</a></li>
+                        <li><a href="#" class="text-light">Website Designing & Development</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-1 mb-3">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Contact</h5>
+                    <p>Address: SCO 96-97, 3rd Floor, Sector 34-A, Chandigarh, India <br />PIN : 160022 </p>
+                    <p>Email: syfronmedia@gmail.com</p>
+                    <p>Phone: +91-8699009560</p>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary pt-3">
+                &copy; 2025 Training Project. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary rounded-circle shadow" 
+            title="Go to top">
+    ↑
+    </button>
+{% block base_scripts %}
+{% include "base_scripts.html" %}
+{% endblock base_scripts %}
+<script src="{% static 'assign/js/backtotop.js' %}"></script>
+</body>
+</html>

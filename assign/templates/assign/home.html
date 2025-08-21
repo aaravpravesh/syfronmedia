@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home | Training Program{% endblock %}
+
+{% block utility_bar %}
+  {% include "utility_bar.html" %}
+{% endblock utility_bar %}
+
+{% block Slider %}
+  {% include "slider.html" %} 
+{% endblock %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center text-center text-white"
+         style="background: url('{% static "images/coding.jpg" %}') center/cover no-repeat; height: 90vh;">
+  <div class="container">
+    <h1 class="display-3 fw-bold" data-aos="fade-down">Welcome to Our Training Program</h1>
+    <p class="lead mt-3 mb-4" data-aos="fade-up">
+      Learn Web Designing, Development, and Digital Skills with Us
+    </p>
+    <a href="{% url 'application' %}" class="btn btn-lg btn-success px-5" data-aos="zoom-in">
+      Apply Now
+    </a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="container py-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4" data-aos="fade-right">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="{% static 'images/tech_computer.jpg' %}" class="card-img-top rounded-top-4" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Learn to Code</h5>
+          <p class="card-text text-muted">Step-by-step guidance on HTML, CSS, JS, and more.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="fade-up">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="{% static 'images/image_2.jpg' %}" class="card-img-top rounded-top-4" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Creative Design</h5>
+          <p class="card-text text-muted">Master UI/UX concepts and create modern web designs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="fade-left">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="{% static 'images/image_3.jpg' %}" class="card-img-top rounded-top-4" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Digital Skills</h5>
+          <p class="card-text text-muted">Gain practical skills to grow your career in IT.
+          Join our community of learners!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4" data-aos="fade-right">
+        <img src="{% static "images/team_students.jpg" %}" class="img-fluid rounded-4 shadow">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="fw-bold">Why Choose Us?</h2>
+        <p class="text-muted">
+          We provide a hands-on learning environment with expert guidance,
+          helping you build strong fundamentals and real-world skills in web designing and development.
+        </p>
+        <ul>
+          <li>✅ Experienced Trainers</li>
+          <li>✅ Real-World Projects</li>
+          <li>✅ Career Guidance</li>
+        </ul>
+        <a href="{% url 'application' %}" class="btn btn-lg btn-success px-5" data-aos="zoom-in">
+      Apply Now
+    </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+
+
+
+{% comment %} {% extends "base.html" %}
+{% block title %}Home | Training Program{% endblock %}
+{% block Slider %}
+  {% include "slider.html" %} 
+{% endblock %}
+{% block content %}
+<!-- Hero Section -->
+ <br />
+
+<div class="bg-dark text-white text-center py-5 mb-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Website Development & Designing Training Program</h1>
+    <p class="lead mt-3">Learn, Create, and Kickstart Your Career in Web Designing</p>
+    <a href="{% url 'application' %}" class="btn btn-primary btn-lg mt-3">Join Now</a>
+  </div>
+</div>
+
+<!-- About Program -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <h2 class="fw-bold mb-3">About the Training</h2>
+      <p class="text-muted">
+        We have organized a professional training program in <strong>Website Development</strong> and 
+        <strong>Website Designing</strong> to provide students and freshers with real-world industry skills.
+        Our training covers both frontend and backend technologies, giving you a complete development experience.
+      </p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> HTML, CSS, JavaScript</li>
+        <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Bootstrap 5 & Responsive Design</li>
+        <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Django / PHP basics for backend</li>
+        <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Real-life projects & assignments</li>
+      </ul>
+    </div>
+    <div class="col-lg-6 text-center">
+      <img src="https://img.freepik.com/free-vector/website-creator-concept-illustration_114360-2762.jpg" 
+           class="img-fluid rounded-4 shadow-lg" alt="Web Development Training">
+    </div>
+  </div>
+</div>
+
+<!-- Hiring Section -->
+<div class="bg-light py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">We are Hiring Trainees for Web Designing</h2>
+    <p class="lead text-muted mb-4">
+      Are you passionate about creativity and design? We are looking for <strong>Web Designer Trainees</strong> 
+      who want to work on live projects and gain practical exposure.
+    </p>
+    <a href="#apply" class="btn btn-success btn-lg">Apply as Web Designer</a>
+  </div>
+</div>
+
+<!-- Why Join Us -->
+<div class="container my-5">
+  <h2 class="fw-bold text-center mb-4">Why Join Our Training?</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100 text-center p-4">
+        <i class="bi bi-laptop fs-1 text-primary mb-3"></i>
+        <h5 class="fw-bold">Hands-on Training</h5>
+        <p class="text-muted">Practical sessions with real-world projects to build your portfolio.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100 text-center p-4">
+        <i class="bi bi-people fs-1 text-success mb-3"></i>
+        <h5 class="fw-bold">Expert Mentors</h5>
+        <p class="text-muted">Learn from industry professionals with years of experience in web development.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100 text-center p-4">
+        <i class="bi bi-briefcase fs-1 text-warning mb-3"></i>
+        <h5 class="fw-bold">Career Growth</h5>
+        <p class="text-muted">Get internship and job opportunities after successful completion.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<div id="apply" class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Ready to Start Your Journey?</h2>
+    <p class="lead">Apply today and become a part of our Website Designing & Development program.</p>
+    <a href="{% url 'application' %}" class="btn btn-light btn-lg">Apply Now</a>
+  </div>
+</div>
+
+{% endblock %} {% endcomment %}

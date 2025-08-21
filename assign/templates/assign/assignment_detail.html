@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Assignment Day {{ assignment.day }}{% endblock %}
+
+{% block content %}
+
+<br />
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      <!-- Video Section -->
+      <div class="card shadow-lg border-0 rounded-4 mb-4">
+        <div class="card-header bg-dark text-white text-center rounded-top-4">
+          <h5 class="mb-0">Day {{ assignment.day }} Training Video</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="ratio ratio-16x9">
+            {{ assignment.embedded_code|safe }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Submission Form -->
+      <form method="POST">
+        {% csrf_token %}
+        <div class="row g-4">
+          <!-- HTML Code Editor -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+              <div class="card-header bg-primary text-white rounded-top-4">
+                <i class="bi bi-code-slash me-2"></i> HTML Code
+              </div>
+              <div class="card-body p-0">
+                {{ form.your_html_code }}
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS Code Editor -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+              <div class="card-header bg-success text-white rounded-top-4">
+                <i class="bi bi-palette me-2"></i> CSS Code
+              </div>
+              <div class="card-body p-0">
+                {{ form.your_css_code }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="card shadow-sm border-0 rounded-4 my-4">
+          <div class="card-header bg-dark text-white rounded-top-4">
+            <i class="bi bi-display me-2"></i> Live Preview
+          </div>
+          <div class="card-body p-0">
+            <iframe id="previewFrame" class="w-100 border-0 rounded-bottom-4" style="height:300px;"></iframe>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">          
+            {% if submission.status == 1 %} 
+            <div class="text-center">
+                <button type="submit" class="btn btn-lg btn-danger px-5 text-success" disabled>
+                    Submit Assignment
+                </button>
+            </div>
+            <p class="text-success"><strong>You have already submitted this assignment.</strong></p>
+            {% else %} <button type="submit" class="btn btn-lg btn-primary px-5"> Submit Assignment </button>{% endif %}
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Live Preview Script -->
+<script>
+  const htmlInput = document.getElementById("id_your_html_code");
+  const cssInput = document.getElementById("id_your_css_code");
+  const previewFrame = document.getElementById("previewFrame");
+
+  function updatePreview() {
+    const html = htmlInput.value;
+    const css = "<style>" + cssInput.value + "</style>";
+    const doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    doc.open();
+    doc.write(css + html);
+    doc.close();
+  }
+
+  htmlInput.addEventListener("input", updatePreview);
+  cssInput.addEventListener("input", updatePreview);
+
+  // Load preview on page load
+  updatePreview();
+</script>
+{% endblock %}

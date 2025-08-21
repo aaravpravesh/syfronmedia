@@ -1,0 +1,52 @@
+body {
+    background-color: #f8f9fa;
+}
+.hero {
+  position: relative;
+  background-attachment: fixed;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+.hover-effect {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hover-effect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+  .top-bar {
+    line-height: 1; /* compress text line-height */
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  /* Contact Links Hover */
+  .contact-link {
+    color: #212529;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .contact-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+  }
+
+  /* Search Input Glow Effect */
+  .search-input {
+    transition: all 0.3s ease;
+    box-shadow: none;
+  }
+  .search-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.6);
+    outline: none;
+  }

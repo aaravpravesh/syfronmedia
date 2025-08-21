@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg rounded-4">
+          <div class="card-body p-4">
+            <h3 class="text-center mb-4">Register</h3>
+            
+            <form id="registrationForm" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <!-- Username -->
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" required>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" id="password2" name="password2" class="form-control" required>
+                <div id="passwordError" class="error-message">Passwords do not match.</div>
+              </div>
+
+              <!-- Profile Picture -->
+              <div class="mb-3">
+                <label class="form-label">Profile Picture (optional)</label>
+                <input type="file" name="profile_pic" class="form-control">
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

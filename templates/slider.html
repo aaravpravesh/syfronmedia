@@ -1,0 +1,35 @@
+
+{% load static %}
+
+<!-- Slider -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/slide_1.jpg' %}" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white fw-bold">Welcome to Training Project</h2>
+                    <p>Your learning journey starts here!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "images/slide_2.jpg" %}" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white fw-bold">Interactive Features</h2>
+                    <p>Modern, responsive design for all devices.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "images/slide_3.jpg" %}" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white fw-bold">Join Us Today</h2>
+                    <p class="text-primary">Login to explore more!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>

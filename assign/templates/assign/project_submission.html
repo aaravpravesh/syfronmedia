@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Project Day{% endblock %}
+
+{% block content %}
+<div class="container mt-5"></div>
+</br />
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-dark text-white text-center rounded-top-4">
+          <h5 class="mb-0">HTML Video <strong> Day {{ assignment.day }} </strong></h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="ratio ratio-16x9">
+            <!-- Replace the src link with your YouTube embed code -->
+            {{ assignment.embedded_code|safe }}
+          </div>
+        </div>
+        <div class="card-footer text-white bg-dark text-center fw-bold rounded-bottom-4">
+          <small>© {{ now|date:"Y" }} Syfron Media</small>
+        </div>
+      </div>
+      <br />
+      
+      <!-- Assignment Form -->
+      <form method="POST">
+        {% csrf_token %}
+        <div class="row g-4">
+          <!-- HTML Code Editor -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+              <div class="card-header bg-primary text-white rounded-top-4">
+                <i class="bi bi-code-slash me-2"></i> HTML Code
+              </div>
+              <div class="card-body p-0">
+                
+                    {% if assignment.status == 0 %}
+                    <textarea id="htmlCode" name="your_html_code" rows="12" 
+                        class="form-control font-monospace border-0 rounded-bottom-4"
+                        placeholder="Write your HTML here..."></textarea>
+                    {% else %}
+                        <textarea id="htmlCode" name="your_html_code" rows="12" 
+                        class="form-control font-monospace border-0 rounded-bottom-4"
+                        placeholder="{{ form.your_html_code.value }}"></textarea>
+                    {% endif %}
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS Code Editor -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+              <div class="card-header bg-success text-white rounded-top-4">
+                <i class="bi bi-palette me-2"></i> CSS Code
+              </div>
+              <div class="card-body p-0">
+                    {% if assignment.status == 0 %}
+                        <textarea id="cssCode" name="your_css_code" rows="12"
+                        class="form-control font-monospace border-0 rounded-bottom-4"
+                        placeholder="Write your CSS here..."></textarea>
+                    {% else %}
+                        <textarea id="cssCode" name="your_css_code" rows="12"
+                        class="form-control font-monospace border-0 rounded-bottom-4">{{ form.your_css_code.value }}</textarea>
+                    {% endif %}
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Preview -->
+        <div class="card shadow-sm border-0 rounded-4 my-4">
+          <div class="card-header bg-dark text-white rounded-top-4">
+            <i class="bi bi-display me-2"></i> Live Preview
+          </div>
+          <div class="card-body p-0">
+            <iframe id="previewFrame" class="w-100 border-0 rounded-bottom-4" style="height:300px;"></iframe>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+         {% if assignment.status == 0 %}
+            <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-primary px-5">
+                Submit Assignment
+            </button>
+            </div>
+        {% else %}
+            <div class="text-center">
+                <button type="submit" class="btn btn-lg btn-primary px-5 text-success" disabled>
+                    Submit Assignment
+                </button>
+            </div>
+            <p class="text-success"><strong>You have already submitted this assignment.</strong></p>
+        {% endif %}
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Live Preview Script -->
+<script>
+  const htmlInput = document.getElementById("htmlCode");
+  const cssInput = document.getElementById("cssCode");
+  const previewFrame = document.getElementById("previewFrame");
+
+  function updatePreview() {
+    const html = htmlInput.value;
+    const css = "<style>" + cssInput.value + "</style>";
+    const doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    doc.open();
+    doc.write(css + html);
+    doc.close();
+  }
+
+  htmlInput.addEventListener("input", updatePreview);
+  cssInput.addEventListener("input", updatePreview);
+</script>
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br />
+<h2 class="mt-5">Project Submission - Day {{ assignment.day }}</h2>
+
+<!-- Embedded YouTube Video -->
+<div class="video-container">
+    {{ assignment.embedded_code|safe }}
+</div>
+
+<!-- Submission Form -->
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-flex">
+        <div class="form-group">
+            <label for="id_your_html_code">Your HTML Code</label>
+            {{ form.your_html_code }}
+        </div>
+        <div class="form-group">
+            <label for="id_your_css_code">Your CSS Code</label>
+            {{ form.your_css_code }}
+        </div>
+    </div>
+        {% if assignment.status == 0 %}
+            <button type="submit" class="btn btn-success">Submit</button>
+        {% else %}
+            <p class="text-success"><strong>You have already submitted this assignment.</strong></p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %} {% endcomment %}

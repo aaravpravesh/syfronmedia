@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Assignments{% endblock %}
+
+{% block content %}
+<div class="container my-2">
+  <h2>Welcome, <span class="text-warning">{{ user.first_name }} {{ user.last_name }} </span>!</h2>
+  <h2 class="mb-4 text-center">Your Assignments</h2>
+
+  <div class="table-responsive shadow-lg rounded-4">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-dark">
+        <tr>
+          <th class="ps-4">Day</th>
+          <th class="ps-3">Assignment</th>
+          <th class="ps-3">Status</th>
+          <th class="ps-3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in assignment_data %}
+        <tr>
+          <td class="fw-bold ps-3">Day {{ item.assignment.day }}</td>
+          <td>Video Assignment</td>
+          <td>
+            {% if item.status == 1 %}
+              <span class="badge bg-success">Submitted</span>
+            {% else %}
+              <span class="badge bg-danger">Not Submitted</span>
+            {% endif %}
+          </td>
+          <td>
+            
+              {% if item.status == 1 %} 
+              <span class="badge bg-danger">Submitted</span>
+              {% else %} 
+              <a href="{% url 'assignment_detail' item.assignment.day %}" class="btn btn-sm btn-primary">Submit </a>
+              {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

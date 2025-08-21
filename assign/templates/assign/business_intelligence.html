@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Business Intelligence{% endblock %}
+
+{% block content %}
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+         style="height:70vh; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('{% static "images/bi-bg.jpg" %}') no-repeat center center/cover;">
+  <div data-aos="fade-right">
+    <h1 class="display-4 fw-bold">Business Intelligence</h1>
+    <p class="lead">Make data-driven decisions with powerful BI dashboards & reports.</p>
+    <a href="#bi-services" class="btn btn-success btn-lg mt-3">See BI Solutions</a>
+  </div>
+</section>
+
+<section id="bi-services" class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-md-4" data-aos="fade-up">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Interactive Dashboards</h5>
+        <p>Visualize your KPIs with dynamic, interactive dashboards.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Data Warehousing</h5>
+        <p>Centralize your business data for faster, smarter reporting.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Performance Insights</h5>
+        <p>Track performance trends & optimize business outcomes in real time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

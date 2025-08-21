@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>Welcome, {{ user.first_name }} {{ user.last_name }} !</h2>
+    <p class="mb-5">This is your dashboard. We'll add features later.</p>
+    <br />
+        <div class="row">
+            {% if not assignments %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">No assignments available at the moment.</h5>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {% for assignment in assignments %}
+                    <div class="col-md-3">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Day {{ assignment.day }}</h5>
+                                <a href="{% url 'project_submission' assignment.id %}" class="btn btn-primary">Open</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+</div>
+{% endblock %}

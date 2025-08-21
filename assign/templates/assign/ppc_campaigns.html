@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}PPC Campaigns{% endblock %}
+
+{% block content %}
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+         style="height:70vh; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('{% static "images/ppc-bg.jpg" %}') no-repeat center center/cover;">
+  <div data-aos="fade-up">
+    <h1 class="display-4 fw-bold">Pay-Per-Click Campaigns</h1>
+    <p class="lead">Drive instant traffic & boost sales with high-performing PPC campaigns.</p>
+    <a href="#ppc-services" class="btn btn-danger btn-lg mt-3">Our PPC Services</a>
+  </div>
+</section>
+
+<section id="ppc-services" class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Google Ads</h5>
+        <p>Reach potential customers instantly through targeted Google Ads.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Social Media Ads</h5>
+        <p>Run engaging campaigns on Facebook, Instagram, and LinkedIn.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold">Remarketing</h5>
+        <p>Re-target your visitors & maximize ROI with smart remarketing ads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

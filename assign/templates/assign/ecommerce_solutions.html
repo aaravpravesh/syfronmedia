@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}E-Commerce Solutions{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+           style="height: 70vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('{% static "images/ecommerce-bg.jpg" %}') no-repeat center center/cover;">
+    <div  data-aos="flip-left">
+      <h1 class="display-4 fw-bold">E-Commerce Solutions</h1>
+      <p class="lead">We build secure, scalable & user-friendly online stores to grow your business.</p>
+      <a href="#features" class="btn btn-warning btn-lg mt-3">Explore Features</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="container py-5">
+    <div class="text-center mb-5" data-aos="zoom-in" data-aos-delay="400">
+      <h2 class="fw-bold">Why Choose Our E-Commerce Solutions?</h2>
+      <p class="text-muted">We combine technology & creativity to deliver outstanding online stores.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Custom Online Stores</h5>
+          <p>Unique designs tailored to your brand with advanced product catalogues.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Secure Payment Gateways</h5>
+          <p>Integration with multiple payment providers for safe & easy transactions.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Scalable Platforms</h5>
+          <p>From small businesses to large enterprises, we provide scalable solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-dark text-white text-center py-5" data-aos="zoom-in" data-aos-delay="100">
+    <h2 class="fw-bold" data-aos="zoom-in" data-aos-delay="400">Launch Your Online Store Today</h2>
+    <p data-aos="flip-left" data-aos-delay="200">Let us help you build an e-commerce platform that boosts sales & customer trust.</p>
+    <a href="/contact/" class="btn btn-warning btn-lg" data-aos="flip-right" data-aos-delay="200">Get a Free Quote</a>
+  </section>
+{% endblock %}

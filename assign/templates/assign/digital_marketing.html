@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Digital Marketing & SEO{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+           style="height: 70vh; background: linear-gradient(rgba(218, 148, 148, 0.6), rgba(0,0,0,0.6)), 
+                  url('{% static "images/digital-marketing-bg.jpg" %}') no-repeat center center/cover;">
+    <div data-aos="zoom-in" data-aos-delay="400">
+      <h1 class="display-4 fw-bold">Digital Marketing & SEO</h1>
+      <p class="lead">Boost your online presence, attract customers & grow your business with proven strategies.</p>
+      <a href="#strategies" class="btn btn-primary btn-lg mt-3">See Our Strategies</a>
+    </div>
+  </section>
+
+  <!-- Strategies Section -->
+  <section id="strategies" class="container py-5">
+    <div class="text-center mb-5" data-aos="flip-left" data-aos-delay="200">
+      <h2 class="fw-bold">Our Digital Marketing Services</h2>
+      <p class="text-muted">Comprehensive solutions to take your brand to the next level.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Search Engine Optimization (SEO)</h5>
+          <p>Rank higher on Google with keyword research, on-page & off-page SEO.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Social Media Marketing</h5>
+          <p>Engage with customers across Facebook, Instagram, LinkedIn & more.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Content & PPC Campaigns</h5>
+          <p>Create engaging content & run targeted paid campaigns for better ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-primary text-white text-center py-5" data-aos="zoom-in" data-aos-delay="400">
+    <h2 class="fw-bold" data-aos="flip-left" data-aos-delay="200">Grow Your Business with Us</h2>
+    <p data-aos="zoom-in" data-aos-delay="200">Our team of experts is ready to help you dominate the digital landscape.</p>
+    <a href="/contact/" class="btn btn-light btn-lg">Get Started</a>
+  </section>
+{% endblock %}

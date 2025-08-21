@@ -1,0 +1,43 @@
+    {% load static %}
+    <!-- Top Utility Bar -->
+    <div class="top-bar px-2 border-bottom" style="background: #f8f9fa; min-height:45px;">
+        <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap position-relative">
+            
+            <!-- Left Side: Logo -->
+            <div class="d-flex align-items-center">
+            <img src="{% static 'images/logo.png' %}" alt="Syfron Media Logo" 
+                style="height:75px; margin-top:-20px;" class="me-2">
+            </div>
+
+            <!-- Right Side: Contact + Search -->
+            <div class="d-flex align-items-center flex-wrap">
+
+            <!-- Email -->
+            <div class="me-3 d-flex align-items-center">
+                <i class="bi bi-envelope-fill text-primary me-1"></i>
+                <a href="mailto:syfronmedia@gmail.com" class="contact-link small">
+                syfronmedia@gmail.com
+                </a>
+            </div>
+
+            <!-- Phone -->
+            <div class="me-3 d-flex align-items-center">
+                <i class="bi bi-telephone-fill text-success me-1"></i>
+                <a href="tel:+918699009560" class="contact-link small">
+                +91-8699009560
+                </a>
+            </div>
+
+            <!-- Search Bar -->
+            <form class="d-flex" role="search">
+                <input class="form-control form-control-sm rounded-pill me-2 search-input" 
+                    type="search" placeholder="Search..." aria-label="Search" style="min-width:160px;">
+                <button class="btn btn-sm btn-primary rounded-pill px-3" type="submit">
+                <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+    

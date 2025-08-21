@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Website Designing & Development{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="hero-section text-white text-center d-flex align-items-center justify-content-center" 
+           style="height: 70vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('{% static "images/webdesign-bg.jpg" %}') no-repeat center center/cover;">
+    <div data-aos="fade-right">
+      <h1 class="display-4 fw-bold">Website Designing & Development</h1>
+      <p class="lead">Crafting modern, responsive & SEO-friendly websites that empower your business.</p>
+      <a href="#services" class="btn btn-success btn-lg mt-3">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Core Services</h2>
+      <p class="text-muted">We deliver solutions tailored to your business needs.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">Responsive Web Design</h5>
+          <p>Beautiful, mobile-friendly designs that look perfect on all devices.</p>
+        </div>
+      </div>
+      <div class="col-md-4"  data-aos="flip-right">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">E-Commerce Solutions</h5>
+          <p>Custom online stores with secure payment gateways and user-friendly UI.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card service-card shadow-sm p-4">
+          <h5 class="fw-bold">SEO & Optimization</h5>
+          <p>SEO strategies that boost your visibility and help you rank higher.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-success text-white text-center py-5">
+    <h2 class="fw-bold">Ready to Build Your Website?</h2>
+    <p>Contact us today and let’s start your digital journey together!</p>
+    <a href="/contact/" class="btn btn-light btn-lg">Get in Touch</a>
+  </section>
+{% endblock %}
