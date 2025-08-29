@@ -56,7 +56,7 @@ def login_view(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect("dashboard")  # ✅ redirect to dashboard
+                return redirect("assignment_list")  # ✅ redirect to dashboard
             else:
                 # ✅ User exists but not active yet
                 messages.error(request, "Your account has been created but not approved yet by the admin. Please wait for approval.")
